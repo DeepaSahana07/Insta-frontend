@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import freeApiService from '../services/freeApiService';
+import { freeAPI } from '../services/api';   // ✅ FIX: correct import
 import { useAuth } from '../context/AuthContext';
 
 const Stories = () => {
@@ -9,34 +9,44 @@ const Stories = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const apiUsers = await freeApiService.getUsers(8);
+        const res = await freeAPI.getDemoUsers();
+        const apiUsers = res.data || [];
+
+        // Put logged-in user first
         const allUsers = user ? [user, ...apiUsers] : apiUsers;
-        setUsers(allUsers);
+        setUsers(allUsers.slice(0, 8));
       } catch (error) {
+        console.error('Stories fetch failed:', error);
         setUsers(user ? [user] : []);
       }
     };
+
     fetchUsers();
   }, [user]);
 
   return (
     <div className="stories-container">
-      <div className="stories-scroll">
-        {users.map((user, index) => (
-          <div key={user.id} className="story-item">
-            <div className="story-ring">
-              <img
-                src={user.profilePicture || user.avatar || '/src/assets/user1.jpg'}
-                alt={user.username}
-                className="story-avatar"
-              />
-            </div>
-            <span className="story-username">
-              {index === 0 ? 'Your story' : user.username}
-            </span>
+      {users.map((storyUser, index) => (
+        <div
+          key={storyUser._id || storyUser.id || index}
+          className="story-item"
+        >
+          <div className="story-ring">
+            <img
+              src={
+                storyUser.profilePicture ||
+                storyUser.avatar ||
+                '/src/assets/user1.jpg'
+              }
+              alt={storyUser.username || 'story'}
+              className="story-avatar"
+            />
           </div>
-        ))}
-      </div>
+          <span className="story-username">
+            {index === 0 ? 'Your story' : storyUser.username}
+          </span>
+        </div>
+      ))}
     </div>
   );
 };

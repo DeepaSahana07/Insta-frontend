@@ -9,9 +9,16 @@ const Register = () => {
     password: '',
     fullName: ''
   });
+
   const [profilePictureUrl, setProfilePictureUrl] = useState('');
+  const [localError, setLocalError] = useState('');
+
   const { register, isAuthenticated, loading, error, clearError } = useAuth();
   const navigate = useNavigate();
+
+  useEffect(() => {
+    clearError();
+  }, []);
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -19,32 +26,30 @@ const Register = () => {
     }
   }, [isAuthenticated, navigate]);
 
-  useEffect(() => {
-    clearError();
-  }, []);
-
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleUrlChange = (e) => {
-    setProfilePictureUrl(e.target.value);
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+    setLocalError('');
+
+    if (!formData.username || !formData.email || !formData.password || !formData.fullName) {
+      setLocalError('All fields are required');
+      return;
+    }
+
     const submitData = {
       ...formData,
-      profilePicture: profilePictureUrl || `https://i.pravatar.cc/150?u=${formData.username}`
+      profilePicture:
+        profilePictureUrl ||
+        `https://i.pravatar.cc/150?u=${formData.username}`
     };
 
     const result = await register(submitData);
-    if (result.success) {
-      navigate('/home', { replace: true });
+
+    if (!result?.success) {
+      setLocalError(result?.message || 'Registration failed');
     }
   };
 
@@ -53,9 +58,9 @@ const Register = () => {
       <div className="login-card">
         <h1 className="login-title">Instagram</h1>
 
-        {error && (
+        {(error || localError) && (
           <div className="login-error">
-            {error}
+            {error || localError}
           </div>
         )}
 
@@ -97,35 +102,39 @@ const Register = () => {
             value={formData.password}
             onChange={handleChange}
             className="login-input"
-            required
             minLength="6"
+            required
           />
 
           <input
             type="url"
-            name="profilePictureUrl"
             placeholder="Profile Picture URL (optional)"
             value={profilePictureUrl}
-            onChange={handleUrlChange}
+            onChange={(e) => setProfilePictureUrl(e.target.value)}
             className="login-input"
           />
+
           {profilePictureUrl && (
-            <div className="preview-container">
-              <img src={profilePictureUrl} alt="Preview" className="preview-image" onError={(e) => e.target.style.display = 'none'} />
+            <div className="profile-preview-container">
+              <img
+                src={profilePictureUrl}
+                alt="Preview"
+                className="profile-preview"
+                onError={(e) => (e.target.style.display = 'none')}
+              />
             </div>
           )}
 
-          <button
-            type="submit"
-            className="login-btn"
-            disabled={loading}
-          >
-            Sign up
+          <button type="submit" className="login-btn" disabled={loading}>
+            {loading ? 'Signing up...' : 'Sign up'}
           </button>
         </form>
 
         <p className="login-switch">
-          Have an account? <Link to="/login" className="login-link">Log in</Link>
+          Have an account?{' '}
+          <Link to="/login" className="login-link">
+            Log in
+          </Link>
         </p>
       </div>
     </div>

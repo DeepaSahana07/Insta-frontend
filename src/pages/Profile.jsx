@@ -125,20 +125,20 @@ const Profile = () => {
             style={{ width: '150px', height: '150px', objectFit: 'cover' }}
           />
           <div>
-            <h2 className="mb-2 text-gray-900 dark:text-white" style={{ fontSize: '28px', fontWeight: '300' }}>
+            <h2 className="mb-2" style={{ fontSize: '28px', fontWeight: '300', color: 'var(--text-primary)' }}>
               {user.username}
             </h2>
-            <h4 className="mb-3 text-gray-900 dark:text-white" style={{ fontSize: '16px', fontWeight: '600' }}>
+            <h4 className="mb-3" style={{ fontSize: '16px', fontWeight: '600', color: 'var(--text-primary)' }}>
               {user.fullName}
             </h4>
             <div className="d-flex gap-4 mb-3">
-              <span className="text-gray-900 dark:text-white">
+              <span style={{ color: 'var(--text-primary)' }}>
                 <strong>{user.postsCount || posts.length}</strong> posts
               </span>
-              <span className="text-gray-900 dark:text-white">
+              <span style={{ color: 'var(--text-primary)' }}>
                 <strong>{user.followersCount || user.followers?.length || 0}</strong> followers
               </span>
-              <span className="text-gray-900 dark:text-white">
+              <span style={{ color: 'var(--text-primary)' }}>
                 <strong>{user.followingCount || user.following?.length || 0}</strong> following
               </span>
             </div>
@@ -167,8 +167,8 @@ const Profile = () => {
         <div className="row">
           {posts.length === 0 ? (
             <div className="col-12 text-center py-5">
-              <i className="bi bi-camera text-gray-500 dark:text-gray-400" style={{ fontSize: '64px' }}></i>
-              <h3 className="mt-3 text-gray-900 dark:text-white">No posts yet</h3>
+              <i className="bi bi-camera" style={{ fontSize: '64px', color: 'var(--text-secondary)' }}></i>
+              <h3 className="mt-3" style={{ color: 'var(--text-primary)' }}>No posts yet</h3>
             </div>
           ) : (
             posts.map(post => (
@@ -302,11 +302,11 @@ const Profile = () => {
             />
             
             <div style={{ padding: '20px' }}>
-              <p className="text-gray-900 dark:text-white" style={{ fontSize: '16px', marginBottom: '10px' }}>
+              <p style={{ fontSize: '16px', marginBottom: '10px', color: 'var(--text-primary)' }}>
                 <strong>{selectedPost.user?.username || user.username}</strong>
                 {selectedPost.caption && ` ${selectedPost.caption}`}
               </p>
-              <p className="text-gray-600 dark:text-gray-400" style={{ fontSize: '14px' }}>
+              <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
                 {Array.isArray(selectedPost.likes) ? selectedPost.likes.length : (selectedPost.likes || 0)} likes
               </p>
             </div>

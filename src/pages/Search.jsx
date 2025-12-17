@@ -57,7 +57,7 @@ const Search = () => {
           {searchQuery.trim() ? (
             searchResults.length > 0 ? (
               <div className="search-results-list">
-                <h6 className="search-results-title text-gray-900 dark:text-white">Users</h6>
+                <h6 className="search-results-title" style={{ color: 'var(--text-primary)' }}>Users</h6>
                 {searchResults.map(searchUser => (
                   <Link 
                     key={searchUser._id}
@@ -73,21 +73,21 @@ const Search = () => {
                       }}
                     />
                     <div className="search-result-info">
-                      <div className="search-result-username text-gray-900 dark:text-white">{searchUser.username}</div>
-                      <div className="search-result-fullname text-gray-600 dark:text-gray-300">{searchUser.fullName}</div>
+                      <div className="search-result-username" style={{ color: 'var(--text-primary)' }}>{searchUser.username}</div>
+                      <div className="search-result-fullname" style={{ color: 'var(--text-secondary)' }}>{searchUser.fullName}</div>
                     </div>
                   </Link>
                 ))}
               </div>
             ) : (
               <div className="no-results">
-                <p className="text-gray-900 dark:text-white">No users found for "{searchQuery}"</p>
+                <p style={{ color: 'var(--text-primary)' }}>No users found for "{searchQuery}"</p>
               </div>
             )
           ) : (
             <div className="search-suggestions">
-              <h6 className="text-gray-900 dark:text-white">Recent searches</h6>
-              <p className="search-placeholder text-gray-600 dark:text-gray-300">Try searching for people, hashtags, or places</p>
+              <h6 style={{ color: 'var(--text-primary)' }}>Recent searches</h6>
+              <p className="search-placeholder" style={{ color: 'var(--text-secondary)' }}>Try searching for people, hashtags, or places</p>
             </div>
           )}
         </div>

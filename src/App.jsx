@@ -40,7 +40,7 @@ const AppContent = () => {
   return (
     <AuthProvider>
       <Router>
-        <div className={`App ${isDark ? 'dark' : ''} bg-white dark:bg-gray-900 min-h-screen`}>
+        <div className="App">
             <Routes>
               {/* Root route - redirect based on auth */}
               <Route path="/" element={<RootRedirect />} />

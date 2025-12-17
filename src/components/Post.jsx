@@ -140,7 +140,18 @@ const Post = ({ post }) => {
       </div>
 
       {/* Post Image */}
-      <img src={post.imageUrl} alt="Post" className="post-image" />
+      <img 
+        src={post.imageUrl || post.image} 
+        alt="Post" 
+        className="post-image" 
+        style={{ display: 'block', width: '100%', background: 'var(--bg-primary)' }}
+        onError={(e) => {
+          console.log('Image failed to load:', post.imageUrl || post.image);
+          e.target.style.display = 'block';
+          e.target.style.background = '#f0f0f0';
+          e.target.style.minHeight = '400px';
+        }}
+      />
 
       {/* Post Actions */}
       <div className="post-actions">

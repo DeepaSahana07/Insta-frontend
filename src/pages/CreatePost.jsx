@@ -89,8 +89,19 @@ const CreatePost = () => {
                 required
               />
               {formData.imageUrl && (
-                <div className="image-preview">
-                  <img src={formData.imageUrl} alt="Preview" className="preview-image" onError={(e) => e.target.style.display = 'none'} />
+                <div className="image-preview" style={{ marginTop: '15px', textAlign: 'center' }}>
+                  <img 
+                    src={formData.imageUrl} 
+                    alt="Preview" 
+                    style={{ 
+                      width: '100%', 
+                      maxHeight: '500px', 
+                      objectFit: 'contain', 
+                      borderRadius: '8px',
+                      background: 'var(--bg-secondary)'
+                    }} 
+                    onError={(e) => e.target.style.display = 'none'} 
+                  />
                 </div>
               )}
             </div>

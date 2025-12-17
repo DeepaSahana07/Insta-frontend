@@ -112,8 +112,8 @@ const Suggestions = () => {
             />
           </Link>
           <div className="user-info-details flex-grow-1">
-            <h6 className="text-gray-900 dark:text-white">{user.username}</h6>
-            <p className="text-gray-600 dark:text-gray-300">{user.fullName}</p>
+            <h6 style={{ color: 'var(--text-primary)' }}>{user.username}</h6>
+            <p style={{ color: 'var(--text-secondary)' }}>{user.fullName}</p>
           </div>
           <button 
             className="btn btn-link p-0 text-decoration-none fw-bold" 
@@ -127,8 +127,8 @@ const Suggestions = () => {
 
       {/* Suggestions */}
       <div className="suggestions-header">
-        <h6 className="suggestions-title text-gray-900 dark:text-white">Suggested for you</h6>
-        <Link to="/explore/people" className="see-all-btn text-blue-500 dark:text-blue-400">See All</Link>
+        <h6 className="suggestions-title" style={{ color: 'var(--text-secondary)' }}>Suggested for you</h6>
+        <Link to="/explore/people" className="see-all-btn" style={{ color: 'var(--primary-color)' }}>See All</Link>
       </div>
 
       {users.map((user) => (
@@ -142,13 +142,13 @@ const Suggestions = () => {
               />
             </Link>
             <div className="suggestion-info">
-              <h6 className="text-gray-900 dark:text-white">
+              <h6 style={{ color: 'var(--text-primary)' }}>
                 {user.username}
                 {user.isVerified && (
                   <i className="bi bi-patch-check-fill text-primary ms-1" style={{fontSize: '12px'}}></i>
                 )}
               </h6>
-              <p className="text-gray-600 dark:text-gray-300">Followed by {user.mutualFollowers?.[0] || 'friends'} + {Math.floor(Math.random() * 10)} more</p>
+              <p style={{ color: 'var(--text-secondary)' }}>Followed by {user.mutualFollowers?.[0] || 'friends'} + {Math.floor(Math.random() * 10)} more</p>
             </div>
           </div>
           <button
@@ -171,11 +171,11 @@ const Suggestions = () => {
       ))}
 
       {/* Footer Links */}
-      <div className="footer-links text-gray-500 dark:text-gray-400">
-        <a href="#" className="text-gray-500 dark:text-gray-400">About</a> · <a href="#" className="text-gray-500 dark:text-gray-400">Help</a> · <a href="#" className="text-gray-500 dark:text-gray-400">Press</a> · <a href="#" className="text-gray-500 dark:text-gray-400">API</a> · <a href="#" className="text-gray-500 dark:text-gray-400">Jobs</a> · <a href="#" className="text-gray-500 dark:text-gray-400">Privacy</a> · <a href="#" className="text-gray-500 dark:text-gray-400">Terms</a> · <a href="#" className="text-gray-500 dark:text-gray-400">Locations</a> · <a href="#" className="text-gray-500 dark:text-gray-400">Language</a> · <a href="#" className="text-gray-500 dark:text-gray-400">Meta Verified</a>
+      <div className="footer-links" style={{ color: 'var(--text-secondary)' }}>
+        <a href="#" style={{ color: 'var(--text-secondary)' }}>About</a> · <a href="#" style={{ color: 'var(--text-secondary)' }}>Help</a> · <a href="#" style={{ color: 'var(--text-secondary)' }}>Press</a> · <a href="#" style={{ color: 'var(--text-secondary)' }}>API</a> · <a href="#" style={{ color: 'var(--text-secondary)' }}>Jobs</a> · <a href="#" style={{ color: 'var(--text-secondary)' }}>Privacy</a> · <a href="#" style={{ color: 'var(--text-secondary)' }}>Terms</a> · <a href="#" style={{ color: 'var(--text-secondary)' }}>Locations</a> · <a href="#" style={{ color: 'var(--text-secondary)' }}>Language</a> · <a href="#" style={{ color: 'var(--text-secondary)' }}>Meta Verified</a>
       </div>
 
-      <div className="footer-copyright text-gray-500 dark:text-gray-400">
+      <div className="footer-copyright" style={{ color: 'var(--text-secondary)' }}>
         © 2025 INSTAGRAM FROM META
       </div>
       
