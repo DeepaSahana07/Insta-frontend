@@ -5,7 +5,7 @@ import { apiService } from '../services/api';
 const Post = ({ post }) => {
   const { user } = useAuth();
   const [isLiked, setIsLiked] = useState(() => {
-    return Array.isArray(post.likes) ? post.likes.includes(user?.id) : false;
+    return Array.isArray(post.likes) ? post.likes.includes(user?.id || user?.id) : false;
   });
   const [isSaved, setIsSaved] = useState(false);
   const [likesCount, setLikesCount] = useState(Array.isArray(post.likes) ? post.likes.length : (post.likes || 0));
@@ -27,10 +27,15 @@ const Post = ({ post }) => {
       // For real posts, use API
       const response = await apiService.likePost(post._id || post.id);
       
-      if (response.data.success) {
-        setIsLiked(response.data.isLiked);
-        setLikesCount(response.data.likesCount);
-      }
+      if (response.data) {
+       setIsLiked(response.data.isLiked ?? !isLiked);
+       setLikesCount(
+       response.data.likesCount ??
+       response.data.likes?.length ??
+       likesCount
+  );
+}
+
     } catch (error) {
       // Fallback to local handling if API fails
       const newIsLiked = !isLiked;
@@ -122,7 +127,8 @@ const Post = ({ post }) => {
             )}
           </div>
         </div>
-        {(post.user._id === user?.id || post.user.id === user?.id) && (
+        {(post.user._id === (user?._id || user?.id) || post.user.id === (user?._id || user?.id)) && (
+
           <button 
             className="post-options"
             onClick={() => handleDeletePost()}
@@ -134,7 +140,7 @@ const Post = ({ post }) => {
       </div>
 
       {/* Post Image */}
-      <img src={post.image} alt="Post" className="post-image" />
+      <img src={post.imageUrl} alt="Post" className="post-image" />
 
       {/* Post Actions */}
       <div className="post-actions">
@@ -180,7 +186,8 @@ const Post = ({ post }) => {
         )}
         
         {Array.isArray(comments) && (showComments ? comments : comments.slice(-2)).map((comment) => (
-          <div key={comment.id} className="post-comment text-gray-900 dark:text-white">
+          <div key={comment._id || comment.id} className="post-comment text-gray-900 dark:text-white">
+
             <span className="comment-username font-semibold">
               {comment.user?.username || 'user'}
             </span>

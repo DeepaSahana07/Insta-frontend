@@ -45,22 +45,22 @@ const Explore = () => {
           ];
           
           explorePosts.push({
-            _id: `explore-${seed}`,
-            id: `explore-${seed}`,
-            image: `https://picsum.photos/400/400?random=${seed}`,
-            caption: getExploreCaption(category, i),
-            user: {
-              username: aestheticUsernames[i % aestheticUsernames.length],
-              profilePicture: `https://i.pravatar.cc/150?img=${(i % 70) + 1}`,
-              fullName: fullNames[i % fullNames.length]
-            },
-            likes: Math.floor(Math.random() * 1000) + 50,
-            comments: Array.from({ length: Math.floor(Math.random() * 10) }, (_, j) => ({
-              id: j,
-              text: 'Amazing shot!',
-              user: { username: `user${j}` }
-            }))
-          });
+  _id: `explore-${seed}`,
+  id: `explore-${seed}`,
+  image: `https://picsum.photos/400/400?random=${seed}`,
+  caption: getExploreCaption(category, i),
+  user: {
+    username: aestheticUsernames[i % aestheticUsernames.length],
+    profilePicture: `https://i.pravatar.cc/150?img=${(i % 70) + 1}`,
+    fullName: fullNames[i % fullNames.length]
+  },
+  likes: Math.floor(Math.random() * 5000) + 100, // Random likes 100-5100
+  comments: Array.from({ length: Math.floor(Math.random() * 50) + 5 }, (_, j) => ({
+    id: j,
+    text: 'Amazing shot!',
+    user: { username: `user${j}` }
+  }))
+});
         }
         
         setPosts(explorePosts);
@@ -135,8 +135,12 @@ const Explore = () => {
               />
               <div className="explore-overlay">
                 <div className="explore-stats">
-                  <span><i className="bi bi-heart-fill"></i> {post.likes?.length || 0}</span>
-                  <span><i className="bi bi-chat-fill"></i> {post.comments?.length || 0}</span>
+                  <span>
+                    <i className="bi bi-heart-fill"></i> {post.likes || Math.floor(Math.random() * 5000) + 100}
+                  </span>
+                  <span>
+                    <i className="bi bi-chat-fill"></i> {post.comments?.length || 0}
+                  </span>
                 </div>
               </div>
             </div>
