@@ -1,12 +1,14 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:8000/api';
+const API_URL = 'https://insta-backend-gbnb.onrender.com/api';
 
 const api = axios.create({
-  baseURL: "http://localhost:8000/api",
+  baseURL: "https://insta-backend-gbnb.onrender.com/api",
   headers: {
     'Content-Type': 'application/json'
-  }
+  },
+  timeout: 10000,
+  withCredentials: true
 });
 
 // Request interceptor to add auth token
@@ -27,9 +29,13 @@ api.interceptors.request.use(
 api.interceptors.response.use(
   (response) => response,
   (error) => {
+    console.error('API Error:', error.message);
     if (error.response?.status === 401) {
       localStorage.removeItem('token');
       window.location.href = '/login';
+    }
+    if (error.code === 'ERR_BLOCKED_BY_CLIENT') {
+      console.error('Request blocked by browser extension or ad blocker');
     }
     return Promise.reject(error);
   }
@@ -37,6 +43,11 @@ api.interceptors.response.use(
 
 // API functions
 export const apiService = {
+  // Authentication
+  register: (userData) => api.post('/user-auth/register', userData),
+  login: (credentials) => api.post('/user-auth/signin', credentials),
+  getCurrentUser: () => api.get('/user-auth/me'),
+  
   // Posts
   createPost: (postData) => api.post('/posts', postData),
   getPosts: () => api.get('/posts/feed'),
