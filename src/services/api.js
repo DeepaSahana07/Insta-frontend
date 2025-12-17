@@ -4,8 +4,6 @@ const API_URL = import.meta.env.VITE_API_BASE_URL || 'https://insta-backend-gbnb
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_BASE_URL || "https://insta-backend-gbnb.onrender.com/api",
-  // ...
-});
   headers: {
     'Content-Type': 'application/json'
   },
