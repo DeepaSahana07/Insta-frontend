@@ -44,9 +44,9 @@ api.interceptors.response.use(
 // API functions
 export const apiService = {
   // Authentication
-  register: (userData) => api.post('/user-auth/register', userData),
-  login: (credentials) => api.post('/user-auth/signin', credentials),
-  getCurrentUser: () => api.get('/user-auth/me'),
+  register: (userData) => api.post('/auth/register', userData),
+  login: (credentials) => api.post('/auth/login', credentials),
+  getCurrentUser: () => api.get('/auth/me'),
   
   // Posts
   createPost: (postData) => api.post('/posts', postData),
