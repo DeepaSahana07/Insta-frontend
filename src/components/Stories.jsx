@@ -34,10 +34,10 @@ const Stories = () => {
           <div className="story-ring">
             <img
               src={
-                storyUser.profilePicture ||
-                storyUser.avatar ||
-                '/src/assets/user1.jpg'
-              }
+                  storyUser.profilePicture?.startsWith("http")
+                    ? storyUser.profilePicture
+                    : `/assets/${storyUser.profilePicture || storyUser.avatar || "user1.jpg"}`
+                }
               alt={storyUser.username || 'story'}
               className="story-avatar"
             />

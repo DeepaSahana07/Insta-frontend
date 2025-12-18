@@ -4,7 +4,7 @@ export const fakeUsers = [
     id: '1',
     username: 'aesthetic.vibes',
     fullName: 'Aesthetic Vibes',
-    profilePicture: '/src/assets/user1.jpg',
+    profilePicture: '/assets/user1.jpg',
     isVerified: false,
     followers: 1250,
     following: 890,
@@ -14,7 +14,7 @@ export const fakeUsers = [
     id: '2',
     username: 'moonlight.dreams',
     fullName: 'Moonlight Dreams',
-    profilePicture: '/src/assets/user2.jpg',
+    profilePicture: '/assets/user2.jpg',
     isVerified: false,
     followers: 2100,
     following: 456,
@@ -24,7 +24,7 @@ export const fakeUsers = [
     id: '3',
     username: 'golden.hour',
     fullName: 'Golden Hour',
-    profilePicture: '/src/assets/user3.jpg',
+    profilePicture: '/assets/user3.jpg',
     isVerified: false,
     followers: 890,
     following: 234,
@@ -34,7 +34,7 @@ export const fakeUsers = [
     id: '4',
     username: 'vintage.soul',
     fullName: 'Vintage Soul',
-    profilePicture: '/src/assets/user4.jpg',
+    profilePicture: '/assets/user4.jpg',
     isVerified: false,
     followers: 3400,
     following: 567,
@@ -44,7 +44,7 @@ export const fakeUsers = [
     id: '5',
     username: 'ocean.waves',
     fullName: 'Ocean Waves',
-    profilePicture: '/src/assets/user5.jpg',
+    profilePicture: '/assets/user5.jpg',
     isVerified: false,
     followers: 1890,
     following: 345,
@@ -54,7 +54,7 @@ export const fakeUsers = [
     id: '6',
     username: 'starry.nights',
     fullName: 'Starry Nights',
-    profilePicture: '/src/assets/user6.jpg',
+    profilePicture: '/assets/user6.jpg',
     isVerified: false,
     followers: 2567,
     following: 678,
@@ -64,7 +64,7 @@ export const fakeUsers = [
     id: '7',
     username: 'nature.lover',
     fullName: 'Nature Lover',
-    profilePicture: '/src/assets/user7.jpg',
+    profilePicture: '/assets/user7.jpg',
     isVerified: true,
     followers: 5670,
     following: 234,
@@ -74,7 +74,7 @@ export const fakeUsers = [
     id: '8',
     username: 'city.explorer',
     fullName: 'City Explorer',
-    profilePicture: '/src/assets/user8.jpg',
+    profilePicture: '/assets/user8.jpg',
     isVerified: false,
     followers: 3210,
     following: 567,
@@ -84,7 +84,7 @@ export const fakeUsers = [
     id: '9',
     username: 'coffee.addict',
     fullName: 'Coffee Addict',
-    profilePicture: '/src/assets/user9.jpg',
+    profilePicture: '/assets/user9.jpg',
     isVerified: false,
     followers: 1456,
     following: 234,
@@ -94,7 +94,7 @@ export const fakeUsers = [
     id: '10',
     username: 'wanderlust.soul',
     fullName: 'Wanderlust Soul',
-    profilePicture: '/src/assets/user10.jpg',
+    profilePicture: '/assets/user10.jpg',
     isVerified: true,
     followers: 4567,
     following: 345,
@@ -104,7 +104,7 @@ export const fakeUsers = [
     id: '11',
     username: 'foodie.adventures',
     fullName: 'Foodie Adventures',
-    profilePicture: '/src/assets/user11.jpg',
+    profilePicture: '/assets/user11.jpg',
     isVerified: false,
     followers: 2890,
     following: 456,
@@ -114,7 +114,7 @@ export const fakeUsers = [
     id: '12',
     username: 'fitness.guru',
     fullName: 'Fitness Guru',
-    profilePicture: '/src/assets/user12.jpg',
+    profilePicture: '/assets/user12.jpg',
     isVerified: true,
     followers: 6789,
     following: 567,
@@ -126,8 +126,8 @@ export const fakePosts = [
   {
     id: '1',
     user: fakeUsers[0],
-    imageUrl: '/src/assets/img1.jpg',
-    image: '/src/assets/img1.jpg',
+    imageUrl: '/assets/img1.jpg',
+    image: '/assets/img1.jpg',
     caption: 'Golden hour magic at the beach. Nothing beats this peaceful moment watching the sun dip into the ocean.',
     likes: 1234,
     comments: [
@@ -140,8 +140,8 @@ export const fakePosts = [
   {
     id: '2',
     user: fakeUsers[1],
-    imageUrl: '/src/assets/img2.jpg',
-    image: '/src/assets/img2.jpg',
+    imageUrl: '/assets/img2.jpg',
+    image: '/assets/img2.jpg',
     caption: 'Morning fuel for another coding session. Clean setup, strong coffee, and endless possibilities ahead.',
     likes: 892,
     comments: [
@@ -154,8 +154,8 @@ export const fakePosts = [
   {
     id: '3',
     user: fakeUsers[2],
-    imageUrl: '/src/assets/img3.jpg',
-    image: '/src/assets/img3.jpg',
+    imageUrl: '/assets/img3.jpg',
+    image: '/assets/img3.jpg',
     caption: 'Reached the summit after 3 hours of hiking. The view from up here makes every step worth it.',
     likes: 2156,
     comments: [
@@ -168,8 +168,8 @@ export const fakePosts = [
   {
     id: '4',
     user: fakeUsers[3],
-    imageUrl: '/src/assets/img4.jpg',
-    image: '/src/assets/img4.jpg',
+    imageUrl: '/assets/img4.jpg',
+    image: '/assets/img4.jpg',
     caption: 'Made this pizza from scratch tonight. Fresh basil from the garden and homemade dough - perfection.',
     likes: 567,
     comments: [
@@ -181,8 +181,8 @@ export const fakePosts = [
   {
     id: '5',
     user: fakeUsers[4],
-    imageUrl: '/src/assets/img5.jpg',
-    image: '/src/assets/img5.jpg',
+    imageUrl: '/assets/img5.jpg',
+    image: '/assets/img5.jpg',
     caption: 'The city comes alive at night. Captured this skyline from my favorite rooftop spot downtown.',
     likes: 1789,
     comments: [
@@ -195,8 +195,8 @@ export const fakePosts = [
   {
     id: '6',
     user: fakeUsers[5],
-    imageUrl: '/src/assets/img6.jpg',
-    image: '/src/assets/img6.jpg',
+    imageUrl: '/assets/img6.jpg',
+    image: '/assets/img6.jpg',
     caption: 'Saturday morning at the farmers market. Supporting local vendors and getting the freshest ingredients.',
     likes: 934,
     comments: [
@@ -208,8 +208,8 @@ export const fakePosts = [
   {
     id: '7',
     user: fakeUsers[6],
-    imageUrl: '/src/assets/img7.jpg',
-    image: '/src/assets/img7.jpg',
+    imageUrl: '/assets/img7.jpg',
+    image: '/assets/img7.jpg',
     caption: 'Deep in the forest where phone signals disappear and peace begins. Nature is the best therapist.',
     likes: 2341,
     comments: [
@@ -222,8 +222,8 @@ export const fakePosts = [
   {
     id: '8',
     user: fakeUsers[7],
-    imageUrl: '/src/assets/img8.jpg',
-    image: '/src/assets/img8.jpg',
+    imageUrl: '/assets/img8.jpg',
+    image: '/assets/img8.jpg',
     caption: 'Sunday brunch done right. Fluffy pancakes, fresh berries, and maple syrup - weekend perfection.',
     likes: 1456,
     comments: [
@@ -236,8 +236,8 @@ export const fakePosts = [
   {
     id: '9',
     user: fakeUsers[0],
-    imageUrl: '/src/assets/img9.jpg',
-    image: '/src/assets/img9.jpg',
+    imageUrl: '/assets/img9.jpg',
+    image: '/assets/img9.jpg',
     caption: 'Cozy Sunday afternoon with a good book and perfectly brewed coffee. Simple pleasures are the best.',
     likes: 987,
     comments: [
@@ -250,8 +250,8 @@ export const fakePosts = [
   {
     id: '10',
     user: fakeUsers[1],
-    imageUrl: '/src/assets/img1.jpg',
-    image: '/src/assets/img1.jpg',
+    imageUrl: '/assets/img1.jpg',
+    image: '/assets/img1.jpg',
     caption: 'Another breathtaking sunset from this Greek island. Every evening here feels like a painting come to life.',
     likes: 3245,
     comments: [
@@ -264,8 +264,8 @@ export const fakePosts = [
   {
     id: '11',
     user: fakeUsers[2],
-    imageUrl: '/src/assets/img2.jpg',
-    image: '/src/assets/img2.jpg',
+    imageUrl: '/assets/img2.jpg',
+    image: '/assets/img2.jpg',
     caption: 'Manhattan from street level. The architecture here tells stories of ambition reaching toward the sky.',
     likes: 1678,
     comments: [
@@ -278,8 +278,8 @@ export const fakePosts = [
   {
     id: '12',
     user: fakeUsers[3],
-    imageUrl: '/src/assets/img3.jpg',
-    image: '/src/assets/img3.jpg',
+    imageUrl: '/assets/img3.jpg',
+    image: '/assets/img3.jpg',
     caption: 'Just finished an intense workout session. Pushing limits and feeling stronger with each rep.',
     likes: 2134,
     comments: [
@@ -292,8 +292,8 @@ export const fakePosts = [
   {
     id: '13',
     user: fakeUsers[4],
-    imageUrl: '/src/assets/img4.jpg',
-    image: '/src/assets/img4.jpg',
+    imageUrl: '/assets/img4.jpg',
+    image: '/assets/img4.jpg',
     caption: 'Spent hours at the modern art museum today. This piece stopped me in my tracks - pure creative genius.',
     likes: 1892,
     comments: [
@@ -306,8 +306,8 @@ export const fakePosts = [
   {
     id: '14',
     user: fakeUsers[5],
-    imageUrl: '/src/assets/img5.jpg',
-    image: '/src/assets/img5.jpg',
+    imageUrl: '/assets/img5.jpg',
+    image: '/assets/img5.jpg',
     caption: 'Burning the midnight oil on this new project. When inspiration strikes, sleep can wait.',
     likes: 1234,
     comments: [
@@ -320,8 +320,8 @@ export const fakePosts = [
   {
     id: '15',
     user: fakeUsers[6],
-    imageUrl: '/src/assets/img6.jpg',
-    image: '/src/assets/img6.jpg',
+    imageUrl: '/assets/img6.jpg',
+    image: '/assets/img6.jpg',
     caption: 'Spring has arrived and the flower market is bursting with color. These tulips brightened my entire day.',
     likes: 2567,
     comments: [
@@ -334,8 +334,8 @@ export const fakePosts = [
   {
     id: '16',
     user: fakeUsers[7],
-    imageUrl: '/src/assets/img7.jpg',
-    image: '/src/assets/img7.jpg',
+    imageUrl: '/assets/img7.jpg',
+    image: '/assets/img7.jpg',
     caption: 'Lost in the beauty of nature. Every trail leads to a new adventure.',
     likes: 1890,
     comments: [
@@ -347,8 +347,8 @@ export const fakePosts = [
   {
     id: '17',
     user: fakeUsers[0],
-    imageUrl: '/src/assets/img8.jpg',
-    image: '/src/assets/img8.jpg',
+    imageUrl: '/assets/img8.jpg',
+    image: '/assets/img8.jpg',
     caption: 'Exploring hidden gems in the city. Architecture that tells a thousand stories.',
     likes: 2234,
     comments: [
@@ -360,8 +360,8 @@ export const fakePosts = [
   {
     id: '18',
     user: fakeUsers[1],
-    imageUrl: '/src/assets/img9.jpg',
-    image: '/src/assets/img9.jpg',
+    imageUrl: '/assets/img9.jpg',
+    image: '/assets/img9.jpg',
     caption: 'Peaceful moments by the water. Sometimes you just need to pause and breathe.',
     likes: 1567,
     comments: [
@@ -373,8 +373,8 @@ export const fakePosts = [
   {
     id: '19',
     user: fakeUsers[2],
-    imageUrl: '/src/assets/img1.jpg',
-    image: '/src/assets/img1.jpg',
+    imageUrl: '/assets/img1.jpg',
+    image: '/assets/img1.jpg',
     caption: 'Chasing sunsets and making memories. Life is beautiful when you take time to notice.',
     likes: 2890,
     comments: [
@@ -386,8 +386,8 @@ export const fakePosts = [
   {
     id: '20',
     user: fakeUsers[3],
-    imageUrl: '/src/assets/img2.jpg',
-    image: '/src/assets/img2.jpg',
+    imageUrl: '/assets/img2.jpg',
+    image: '/assets/img2.jpg',
     caption: 'Urban vibes and city lights. There is magic in every corner of this concrete jungle.',
     likes: 1678,
     comments: [
@@ -399,8 +399,8 @@ export const fakePosts = [
   {
     id: '21',
     user: fakeUsers[8],
-    imageUrl: '/src/assets/img3.jpg',
-    image: '/src/assets/img3.jpg',
+    imageUrl: '/assets/img3.jpg',
+    image: '/assets/img3.jpg',
     caption: 'Morning coffee ritual. The perfect start to any productive day.',
     likes: 2345,
     comments: [
@@ -412,8 +412,8 @@ export const fakePosts = [
   {
     id: '22',
     user: fakeUsers[9],
-    imageUrl: '/src/assets/img4.jpg',
-    image: '/src/assets/img4.jpg',
+    imageUrl: '/assets/img4.jpg',
+    image: '/assets/img4.jpg',
     caption: 'Adventure awaits around every corner. Pack light, travel far, dream big.',
     likes: 3456,
     comments: [
@@ -425,8 +425,8 @@ export const fakePosts = [
   {
     id: '23',
     user: fakeUsers[10],
-    imageUrl: '/src/assets/img5.jpg',
-    image: '/src/assets/img5.jpg',
+    imageUrl: '/assets/img5.jpg',
+    image: '/assets/img5.jpg',
     caption: 'Homemade pasta night. Nothing beats the satisfaction of cooking from scratch.',
     likes: 1987,
     comments: [
@@ -438,8 +438,8 @@ export const fakePosts = [
   {
     id: '24',
     user: fakeUsers[11],
-    imageUrl: '/src/assets/img6.jpg',
-    image: '/src/assets/img6.jpg',
+    imageUrl: '/assets/img6.jpg',
+    image: '/assets/img6.jpg',
     caption: 'Push your limits. Every rep counts, every drop of sweat is progress.',
     likes: 2876,
     comments: [
@@ -451,8 +451,8 @@ export const fakePosts = [
   {
     id: '25',
     user: fakeUsers[0],
-    imageUrl: '/src/assets/img7.jpg',
-    image: '/src/assets/img7.jpg',
+    imageUrl: '/assets/img7.jpg',
+    image: '/assets/img7.jpg',
     caption: 'Forest therapy session. Sometimes the best medicine is a walk among trees.',
     likes: 2134,
     comments: [
@@ -464,8 +464,8 @@ export const fakePosts = [
   {
     id: '26',
     user: fakeUsers[1],
-    imageUrl: '/src/assets/img8.jpg',
-    image: '/src/assets/img8.jpg',
+    imageUrl: '/assets/img8.jpg',
+    image: '/assets/img8.jpg',
     caption: 'Street art tells stories. Every wall is a canvas waiting for expression.',
     likes: 1765,
     comments: [
@@ -477,8 +477,8 @@ export const fakePosts = [
   {
     id: '27',
     user: fakeUsers[2],
-    imageUrl: '/src/assets/img9.jpg',
-    image: '/src/assets/img9.jpg',
+    imageUrl: '/assets/img9.jpg',
+    image: '/assets/img9.jpg',
     caption: 'Quiet moments by the lake. Reflection time is essential for the soul.',
     likes: 2543,
     comments: [
@@ -490,8 +490,8 @@ export const fakePosts = [
   {
     id: '28',
     user: fakeUsers[8],
-    imageUrl: '/src/assets/img1.jpg',
-    image: '/src/assets/img1.jpg',
+    imageUrl: '/assets/img1.jpg',
+    image: '/assets/img1.jpg',
     caption: 'Golden hour magic never gets old. Chasing light and capturing moments.',
     likes: 3210,
     comments: [
@@ -503,8 +503,8 @@ export const fakePosts = [
   {
     id: '29',
     user: fakeUsers[9],
-    imageUrl: '/src/assets/img2.jpg',
-    image: '/src/assets/img2.jpg',
+    imageUrl: '/assets/img2.jpg',
+    image: '/assets/img2.jpg',
     caption: 'City nights and neon lights. The urban jungle comes alive after dark.',
     likes: 1876,
     comments: [
@@ -516,8 +516,8 @@ export const fakePosts = [
   {
     id: '30',
     user: fakeUsers[10],
-    imageUrl: '/src/assets/img3.jpg',
-    image: '/src/assets/img3.jpg',
+    imageUrl: '/assets/img3.jpg',
+    image: '/assets/img3.jpg',
     caption: 'Fresh ingredients make all the difference. Farm to table is the way to go.',
     likes: 2987,
     comments: [
@@ -533,7 +533,7 @@ export const suggestedUsers = [
     id: '7',
     username: 'dreamy.aesthetics',
     fullName: 'Dreamy Aesthetics',
-    profilePicture: '/src/assets/user7.jpg',
+    profilePicture: '/assets/user7.jpg',
     mutualFollowers: ['aesthetic.vibes'],
     isFollowing: false
   },
@@ -541,7 +541,7 @@ export const suggestedUsers = [
     id: '8',
     username: 'wanderlust.soul',
     fullName: 'Wanderlust Soul',
-    profilePicture: '/src/assets/user8.jpg',
+    profilePicture: '/assets/user8.jpg',
     mutualFollowers: ['golden.hour'],
     isFollowing: false,
     isVerified: true
@@ -552,7 +552,7 @@ export const currentUser = {
   id: 'current',
   username: 'sahana_8607',
   fullName: 'Deepa Sahana',
-  profilePicture: '/src/assets/flower.jpg.jpg',
+  profilePicture: '/assets/flower.jpg.jpg',
   followers: 1456,
   following: 892,
   posts: 67,

@@ -114,7 +114,7 @@ const Post = ({ post }) => {
       <div className="post-header">
         <div className="post-user-info">
           <img
-            src={post.user.avatar || post.user.profilePicture || '/src/assets/user1.jpg'}
+            src={post.user.avatar || post.user.profilePicture || '/assets/user1.jpg'}
             alt={post.user.username}
             className="post-avatar"
           />
@@ -140,18 +140,17 @@ const Post = ({ post }) => {
       </div>
 
       {/* Post Image */}
-      <img 
-        src={post.imageUrl || post.image} 
-        alt="Post" 
-        className="post-image" 
-        style={{ display: 'block', width: '100%', background: 'var(--bg-primary)' }}
-        onError={(e) => {
-          console.log('Image failed to load:', post.imageUrl || post.image);
-          e.target.style.display = 'block';
-          e.target.style.background = '#f0f0f0';
-          e.target.style.minHeight = '400px';
-        }}
-      />
+      <img
+          src={post.imageUrl?.startsWith("http")
+            ? post.imageUrl
+            : `/assets/${post.imageUrl}`}
+          alt="Post"
+          className="post-image"
+          onError={(e) => {
+            e.target.src = "/assets/img1.jpg";
+          }}
+        />
+
 
       {/* Post Actions */}
       <div className="post-actions">
