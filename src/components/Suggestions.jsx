@@ -106,14 +106,10 @@ const Suggestions = () => {
         <div className="user-info-card">
           <Link to={`/profile/${user.username}`}>
             <img
-              src={
-                user.profilePicture?.startsWith("http")
-                  ? user.profilePicture
-                  : `/assets/${user.profilePicture || "user1.jpg"}`
-              }
+              src={user.profilePicture || '/src/assets/user1.jpg'}
               alt={user.username}
+              className="user-info-avatar"
             />
-
           </Link>
           <div className="user-info-details flex-grow-1">
             <h6 style={{ color: 'var(--text-primary)' }}>{user.username}</h6>

@@ -193,8 +193,8 @@ class FreeAPIService {
       {
         id: 1,
         caption: 'Lost in the beauty of this ancient library 📚 Every book holds a universe of stories waiting to be discovered.',
-        image: '/assets/img1.jpg',
-        user: { username: 'bookworm_soul', avatar: '/assets/user1.jpg' },
+        image: '/src/assets/img1.jpg',
+        user: { username: 'bookworm_soul', avatar: '/src/assets/user1.jpg' },
         likes: 123,
         comments: [],
         createdAt: '2h'
@@ -208,8 +208,8 @@ class FreeAPIService {
         id: 1,
         username: 'demo_user',
         name: 'Demo User',
-        avatar: '/assets/user1.jpg',
-        profilePicture: '/assets/user1.jpg',
+        avatar: '/src/assets/user1.jpg',
+        profilePicture: '/src/assets/user1.jpg',
         followers: 100,
         following: 50,
         posts: 10
